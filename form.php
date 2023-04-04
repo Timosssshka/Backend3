@@ -5,7 +5,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'GET') {
     if (!empty($_GET['save'])) {// Если есть параметр save, то выводим сообщение пользователю.
         print('Спасибо, результаты сохранены.');
     }
-    include('index.php');
+    include('form.php');
     exit();
 }
 // Проверяем ошибки.
@@ -30,12 +30,12 @@ if (empty($_POST['kon'])){
     print ('Выберите количество конечностей<br>');
     $errors = true;
 }
-if (empty($_POST['super[]'])){
+if (empty($_POST['super'])){
     print ('Выберите минимум одну сверхспособность<br>');
     $errors = true;
 }
 else {
-    $super = serialize($_POST['super[]']);
+    $super = serialize($_POST['super']);
 }
 if (empty($_POST['bio'])){
     print ('Расскажите о себе<br>');
@@ -54,7 +54,7 @@ $pass = '3596996';
 $db = new PDO('mysql:host=localhost;dbname=u52925', $user, $pass, array(PDO::ATTR_PERSISTENT => true));
 // Подготовленный запрос. Не именованные метки.
 try {
-    $stmt = $db->prepare("INSERT INTO person SET name = ?, email = ?, year = ?, gender = ?, kon = ?, bio = ?");
+    $stmt = $db->prepare("INSERT INTO person SET name = ?, email = ?, year = ?, gender = ?, limbs = ?, biography = ?");
     $stmt -> execute(array(
         $_POST['name'],
         $_POST['email'],
@@ -63,18 +63,14 @@ try {
         $_POST['kon'],
         $_POST['bio'],
     ));
-    //$arr = array(1, 2, 3, 4);
-    foreach ($_POST['super[]'] as $value) {
-    //$value = $value * 2;
-        $stmt = $db->prepare("INSERT INTO superpower SET name = ?, super[] = ?");
+    foreach ($_POST['super'] as $value) {
+        $stmt = $db->prepare("INSERT INTO superpower SET name = ?, superpower = ?");
         $stmt -> execute(array(
             $_POST['name'], 
-            $_POST['super[]'] = implode($value),
+            $value,
         ));
     }
-// массив $arr сейчас таков: array(2, 4, 6, 8)
     unset($value);
-    
 }
 catch(PDOException $e){
 print('Error: ' . $e->getMessage());
