@@ -11,7 +11,7 @@
 	<div class="d-flex flex-column flex-md-row align-items-center p-3 px-md-4 bg-white border-bottom shadow-sm">
 	</div>
 	<div class="container">
-		<form action="form_handler.php" method="POST">
+		<form action="form.php" method="POST">
 			<p><label for="name">Имя</label>
 			<input type="text" id="name" name="name"></p>
 			
