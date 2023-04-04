@@ -1,0 +1,17 @@
+CREATE TABLE person (
+id INT(10) unsigned NOT NULL AUTO_INCREMENT,
+name VARCHAR(128) NOT NULL DEFAULT '',
+email VARCHAR(30),
+year YEAR(4),
+gender VARCHAR(10),
+limbs INT(5),
+biography TEXT,
+PRIMARY KEY(id)
+);
+
+CREATE TABLE superpower(
+id INT(10) unsigned NOT NULL AUTO_INCREMENT,
+name VARCHAR(128),
+superpower VARCHAR(200),
+PRIMARY KEY(id)
+);
