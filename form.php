@@ -90,8 +90,9 @@ try {
         $_POST['bio'],
 	));
 	
-  $stmt = $db->prepare("INSERT INTO superpower SET name = ?");
+  $stmt = $db->prepare("INSERT INTO superpower SET name = ?, superpower = ?");
   $stmt -> execute(array(
+	 	 $_POST['name'],
 		$_POST['super'] = implode(', ', $_POST['super']),
 	));
 }
