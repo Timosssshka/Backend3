@@ -1,0 +1,20 @@
+html,body 
+{
+  background-color: #e4f8ad;
+}
+.forma
+{
+text-align: center;
+justify-content: center;
+position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 50%;
+  transform: translate(-50%, -50%);
+  background: #dd71e0;
+  border-radius: 20px;
+  padding: 50px;
+}
+.button{
+  font-size: 30px;
+}
