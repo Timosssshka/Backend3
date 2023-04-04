@@ -25,11 +25,11 @@
             </label>
             <label for="year" class="names">Год рождения</label>
             <select name="year">
-     <!-- <?php 
+      <?php 
     for ($i = 1922; $i <= 2022; $i++) {
       printf('<option value="%d">%d</option>', $i, $i);
     }
-    ?> -->
+    ?>
   </select>
             <br>
             <div class="names">Выберите пол:</div>
