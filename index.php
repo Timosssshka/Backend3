@@ -60,7 +60,7 @@
                 <br>
 				<div class="names">
                 Биография: </div>
-                <textarea name="bio">Напишите о себе</textarea><br>
+                <textarea name="bio" placeholder="Напишите о себе"></textarea><br>
                 <label><input type="checkbox" checked="checked" name="contr_check" />
                     с контрактом ознакомлен(а)</label>
                 <br>
