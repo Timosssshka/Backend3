@@ -1,20 +1,22 @@
 html,body 
 {
-  background-color: #e4f8ad;
+  background-color: aqua;
 }
 .forma
 {
+  font-size: 18px;
 text-align: center;
-justify-content: center;
 position: absolute;
   top: 50%;
   left: 50%;
   width: 50%;
   transform: translate(-50%, -50%);
-  background: #dd71e0;
+  background: #28cf9d;
   border-radius: 20px;
   padding: 50px;
 }
-.button{
-  font-size: 30px;
+.submit{
+  font-size: 22px;
+  background-color:rgb(119, 255, 114);
+  border-radius: 5px;
 }
