@@ -61,7 +61,7 @@ if ($errors) {
 }
 else
 {
-	'save'=1;
+	$save=1;
 }
 $user = 'u52925';
 $pass = '3596996';
