@@ -87,4 +87,10 @@ catch(PDOException $e){
   exit();
 }
 header('Location: ?save=1');
+if (isset($_GET['save']) && $_GET['save'] == 1) {
+  // выполняем действия сохранения
+  // перенаправляем пользователя на ту же страницу без параметра save
+  header('Location: ' . strtok($_SERVER["REQUEST_URI"], '?'));
+  exit();
+}
 exit();
