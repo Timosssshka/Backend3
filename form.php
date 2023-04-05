@@ -88,4 +88,4 @@ catch(PDOException $e){
   exit();
 }
 header('Location: ?save=1');
-header('Refresh: 1; url=u52925.kubsu-dev.ru/backend3/form.php');
+header('Location: ?save=1 ' . $_SERVER['PHP_SELF']);
