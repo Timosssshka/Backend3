@@ -92,9 +92,4 @@ $db = new PDO('mysql:host=localhost;dbname=u52925', $user, $pass, array(PDO::ATT
 //     }
 //     unset($value);
 // }
-
-catch(PDOException $e){
-  print('Error: ' . $e->getMessage());
-  exit();
-}
 header('Location: ?save=1');
