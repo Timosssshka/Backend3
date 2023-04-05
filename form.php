@@ -59,6 +59,11 @@ if (empty($_POST['contr_check'])){
 if ($errors) {
   exit();
 }
+else
+{
+ print('Спасибо, результаты сохранены.');
+}
+
 
 $user = 'u52925';
 $pass = '3596996';
@@ -87,12 +92,4 @@ catch(PDOException $e){
   print('Error: ' . $e->getMessage());
   exit();
 }
-session_start(); // начало сессии
-$_SESSION['message'] = 'Спасибо, результаты сохранены.';
-// На странице, куда пользователь будет перенаправлен
-session_start(); // начало сессии
-if (isset($_SESSION['message'])) {
-  echo $_SESSION['message']; // отобразить сообщение
-  unset($_SESSION['message']); // удалить сообщение из сессии, чтобы оно не появлялось при обновлении страницы
-}
-
+//header('Location: ?save=1');
