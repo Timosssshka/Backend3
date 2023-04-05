@@ -59,12 +59,6 @@ if (empty($_POST['contr_check'])){
 if ($errors) {
   exit();
 }
-else
-{
- print('Спасибо, результаты сохранены.');
-}
-
-
 $user = 'u52925';
 $pass = '3596996';
 $db = new PDO('mysql:host=localhost;dbname=u52925', $user, $pass, array(PDO::ATTR_PERSISTENT => true));
@@ -92,4 +86,4 @@ catch(PDOException $e){
   print('Error: ' . $e->getMessage());
   exit();
 }
-//header('Location: ?save=1');
+header('Location: ?save=1');
