@@ -87,5 +87,5 @@ catch(PDOException $e){
   print('Error: ' . $e->getMessage());
   exit();
 }
-header('Location: ', true, 303);
+header('Location: /success?save=1', true, 303);
 
