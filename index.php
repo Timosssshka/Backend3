@@ -8,12 +8,12 @@
 </head>
 
 <body>
+	<div class="forma">
 	<header>
         <div id="название">
             <h2>Cверхспособности</h2>
         </div>
     </header>
-	<div class="forma">
         <form action="form.php" method="POST">
             <label>
                 <div class="names">Введите имя:</div>
