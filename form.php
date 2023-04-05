@@ -76,21 +76,18 @@ try {
         $_POST['bio'],
 	));
 	
-  $stmt = $db->prepare("INSERT INTO superpower SET name = ?, superpower = ?");
-  $stmt -> execute(array(
-	 	 $_POST['name'],
-		$_POST['super'] = implode(', ', $_POST['super']),
-	));
+ foreach ($_POST['superpowers'] as $value) {
+        $stmt = $db->prepare("INSERT INTO superpower SET name = ?, superpower = ?");
+        $stmt -> execute(array(
+            $_POST['name'], 
+            $value,
+        ));
+    }
+    unset($value);
 }
+
 catch(PDOException $e){
   print('Error: ' . $e->getMessage());
   exit();
 }
 header('Location: ?save=1');
-if (isset($_GET['save']) && $_GET['save'] == 1) {
-  // выполняем действия сохранения
-  // перенаправляем пользователя на ту же страницу без параметра save
-  header('Location: ' . strtok($_SERVER["REQUEST_URI"], '?'));
-  exit();
-}
-exit();
