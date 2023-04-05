@@ -1,6 +1,7 @@
 html,body 
 {
   background-color: aqua;
+  text-align: center;
 }
 .forma
 {
@@ -19,7 +20,4 @@ position: absolute;
   font-size: 22px;
   background-color:rgb(119, 255, 114);
   border-radius: 5px;
-}
-#название{
-  text-align: center;
 }
