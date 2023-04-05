@@ -82,4 +82,9 @@ try {
     }
     unset($value);
 }
+catch(PDOException $e){
+print('Error: ' . $e->getMessage());
+exit();
+}
+// stmt - это "дескриптор состояния"
 header('Location: ?save=1');
