@@ -87,3 +87,4 @@ catch(PDOException $e){
   exit();
 }
 header('Location: ?save=1');
+exit();
