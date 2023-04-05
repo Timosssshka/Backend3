@@ -100,4 +100,4 @@ catch(PDOException $e){
   print('Error: ' . $e->getMessage());
   exit();
 }
-header('Location: ' . $_SERVER['HTTP_REFERER']);
+header('Location: ?save=1');
