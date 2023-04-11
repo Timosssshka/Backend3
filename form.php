@@ -74,7 +74,7 @@ try {
 	 $_POST['contr_check'],
     ));
 	
-//  foreach ($_POST['superpowers'] as $value) {
+//  foreach ($_POST['super'] as $value) {
 //         $stmt = $db->prepare("INSERT INTO superpower SET name = ?, superpower = ?");
 //         $stmt -> execute(array(
 //             $_POST['name'], 
