@@ -74,15 +74,15 @@ try {
 	 $_POST['contr_check'],
     ));
 	
-//  foreach ($_POST['super'] as $value) {
-//         $stmt = $db->prepare("INSERT INTO superpower SET name = ?, superpower = ?");
-//         $stmt -> execute(array(
-//             $_POST['name'], 
-//             $value,
-//         ));
-//     }
-//     unset($value);
-// }
+ foreach ($_POST['super'] as $value) {
+        $stmt = $db->prepare("INSERT INTO superpower SET name = ?, superpower = ?");
+        $stmt -> execute(array(
+            $_POST['name'], 
+            $value,
+        ));
+    }
+    unset($value);
+}
 catch(PDOException $e){
 print('Error: ' . $e->getMessage());
 exit();
