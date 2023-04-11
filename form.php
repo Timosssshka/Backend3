@@ -59,30 +59,40 @@ if (empty($_POST['contr_check'])){
 if ($errors) {
   exit();
 }
+$name = $_POST['name'];
+$email = $_POST['email'];
+$birth_date = $_POST['year'];
+$gender = $_POST['gender'];
+$limbs = $_POST['kon'];
+$superpowers = $_POST['super'];
+$bio = $_POST['bio'];
+$contract = $_POST['contr_check'];
 $user = 'u52925';
 $pass = '3596996';
-$db = new PDO('mysql:host=localhost;dbname=u52925', $user, $pass, array(PDO::ATTR_PERSISTENT => true));
+$conn = new PDO('mysql:host=localhost;dbname=u52925', $user, $pass, array(PDO::ATTR_PERSISTENT => true));
 try {
-  $stmt = $db->prepare("INSERT INTO person SET name = ?, email = ?, year = ?, gender = ?, limbs = ?, biography = ?, contract = ?");
-  $stmt -> execute(array(
-	$_POST['name'],
-        $_POST['email'],
-        $_POST['year'],
-        $_POST['gender'],
-        $_POST['kon'],
-        $_POST['bio'],
-	$_POST['contr_check'],
-	));
-	
- foreach ($_POST['superpowers'] as $value) {
-        $stmt = $db->prepare("INSERT INTO superpower SET name = ?, superpower = ?");
-        $stmt -> execute(array(
-            $_POST['name'], 
-            $value,
-        ));
+   $stmt = $conn->prepare("INSERT INTO person(name, email, year , gender, limbs, biography , contract)
+    VALUES (?, ?, ?, ?, ?, ?, ?)");
+    $stmt->bind_param("ssssiss", $name, $email, $birth_date, $gender, $limbs, $bio, $contract);
+    $stmt->execute();
+    $last_id = mysqli_insert_id($conn);
+    foreach ($superpowers as $item) {
+        $query = "INSERT INTO user_superpowers (person_id , ability_id ) VALUES ('$last_id', '$item')";
+        mysqli_query($conn, $query);
     }
-    unset($value);
+    $stmt->close();
+    $conn->close();
 }
+	
+//  foreach ($_POST['superpowers'] as $value) {
+//         $stmt = $db->prepare("INSERT INTO superpower SET name = ?, superpower = ?");
+//         $stmt -> execute(array(
+//             $_POST['name'], 
+//             $value,
+//         ));
+//     }
+//     unset($value);
+// }
 catch(PDOException $e){
 print('Error: ' . $e->getMessage());
 exit();
