@@ -71,7 +71,7 @@ try {
         $_POST['gender'],
         $_POST['kon'],
         $_POST['bio'],
-	$_POST['contr_check']
+	$_POST['contr_check'],
 	));
 	
  foreach ($_POST['superpowers'] as $value) {
