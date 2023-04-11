@@ -5,6 +5,7 @@ email VARCHAR(255) NOT NULL,
 year INT NOT NULL,
 gender VARCHAR(10),
 limbs INT NOT NULL,
+biography text NOT NULL,
 contract BOOLEAN NOT NULL
 );
 Create table abilities (
