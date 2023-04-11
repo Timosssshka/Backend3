@@ -65,7 +65,7 @@ $db = new PDO('mysql:host=localhost;dbname=u52925', $user, $pass, array(PDO::ATT
 try {
   $stmt = $db->prepare("INSERT INTO person SET name = ?, email = ?, year = ?, gender = ?, limbs = ?, biography = ?, contract = ?");
   $stmt -> execute(array(
-		$_POST['name'],
+	$_POST['name'],
         $_POST['email'],
         $_POST['year'],
         $_POST['gender'],
