@@ -77,7 +77,7 @@ try {
     $stmt->execute();
     $last_id = mysqli_insert_id($conn);
     foreach ($superpowers as $item) {
-        $query = "INSERT INTO user_superpowers (person_id , ability_id ) VALUES ('$last_id', '$item')";
+        $query = "INSERT INTO person_ability  (person_id , ability_id ) VALUES ('$last_id', '$item')";
         mysqli_query($conn, $query);
     }
     $stmt->close();
