@@ -1,21 +1,25 @@
-Create table person (
-id INT AUTO_INCREMENT PRIMARY KEY,
-name VARCHAR(255) NOT NULL,
-email VARCHAR(255) NOT NULL,
-year INT NOT NULL,
-gender VARCHAR(10),
-limbs INT NOT NULL,
-biography text NOT NULL,
-contract BOOLEAN NOT NULL
+CREATE TABLE users (
+    id INT AUTO_INCREMENT PRIMARY KEY,
+    name VARCHAR(255) NOT NULL,
+    email VARCHAR(255) NOT NULL,
+    birth_year INT NOT NULL,
+    gender ENUM('male', 'female') NOT NULL,
+    limbs INT NOT NULL,
+    bio TEXT NOT NULL,
+    contract BOOLEAN NOT NULL
 );
-Create table abilities (
-id INT AUTO_INCREMENT PRIMARY KEY,
-ability_name VARCHAR(255) NOT NULL
+ 
+CREATE TABLE abilities (
+    id INT AUTO_INCREMENT PRIMARY KEY,
+    ability_name VARCHAR(255) NOT NULL
 );
-Create table person_ability (
-person_id INT NOT NULL,
-ability_id INT NOT NULL,
-PRIMARY KEY (person_id,ability_id),
-FOREIGN KEY (person_id) REFERENCES person(id),
-FOREIGN KEY (ability_id) REFERENCES abilities(id)
+ 
+INSERT INTO abilities (ability_name) VALUES ('immortality'), ('wall_pass'), ('levitation'), ('Flying'), ('Teleportation');
+ 
+CREATE TABLE user_abilities (
+    user_id INT NOT NULL,
+    ability_id INT NOT NULL,
+    PRIMARY KEY (user_id, ability_id),
+    FOREIGN KEY (user_id) REFERENCES users(id),
+    FOREIGN KEY (ability_id) REFERENCES abilities(id)
 );
