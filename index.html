@@ -8,7 +8,7 @@
 </head>
 <body>
     <div class="container">
-        <h1>Регистрация</h1>
+        <h1>Суперспособности</h1>
         <form action="submit.php" method="POST" id="form">
             <label for="name">Имя:</label>
             <input type="text" name="name" id="name" required>
@@ -29,12 +29,15 @@
             <label>Количество конечностей:</label>
             <label><input type="radio" name="limbs" value="2" required> 2</label>
             <label><input type="radio" name="limbs" value="4" required> 4</label>
+            <label><input type="radio" name="limbs" value="6" required> 6</label>
 
             <label for="abilities">Сверхспособности:</label>
             <select name="abilities[]" id="abilities" multiple required>
                 <option value="immortality">Бессмертие</option>
                 <option value="wall_pass">Прохождение сквозь стены</option>
                 <option value="levitation">Левитация</option>
+                <option value="Fly">Полёт</option>
+                <option value="Teleportation">Телепортация</option>
             </select>
 
             <label for="bio">Биография:</label>
