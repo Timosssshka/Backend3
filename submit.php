@@ -52,7 +52,7 @@ try {
     $user_id = $db->lastInsertId();
  
     // Сохранение списка способностей пользователя в таблице user_superpowers
-    $stmt = $db->prepare("INSERT INTO user_superpowers (user_id, superpowers) VALUES (?, ?)");
+    $stmt = $db->prepare("INSERT INTO user_abilities (user_id, ability_name) VALUES (?, ?)");
     $stmt->execute([$user_id, $abilities_json]);
  
     echo "Данные успешно сохранены.";
