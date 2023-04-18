@@ -10,7 +10,7 @@ body {
     background-color: #fba6a6;
     padding: 20px;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-border-radius: 5px;
+border-radius: 20px;
 }
 
 h1 {
@@ -56,7 +56,7 @@ color: #fff;
 font-size: 16px;
 border: none;
 cursor: pointer;
-border-radius: 5px;
+border-radius: 10px;
 text-transform: uppercase;
 }
 
