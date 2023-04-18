@@ -61,3 +61,8 @@ try {
     }
  
     echo "Данные успешно сохранены.";
+ } 
+catch (PDOException $e) {
+    print('Error : ' . $e->getMessage());
+    exit();
+}
