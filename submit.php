@@ -51,13 +51,13 @@ try {
  
     $user_id = $db->lastInsertId();
  
-    // Сохранение списка способностей пользователя в таблице user_superpowers
-    $stmt = $db->prepare("INSERT INTO user_abilities (user_id, ability) VALUES (?, ?)");
-    $stmt->execute([$user_id, $abilities_json]);
+    $stmt = $db->prepare("SELECT id FROM abilities WHERE ability_name = ?");
+    foreach ($abilities as $ability) {
+        $stmt->execute([$ability]);
+        $ability_id = $stmt->fetchColumn();
+ 
+        $stmt2 = $db->prepare("INSERT INTO user_abilities (user_id, ability_id) VALUES (?, ?)");
+        $stmt2->execute([$user_id, $ability_id]);
+    }
  
     echo "Данные успешно сохранены.";
- 
-} catch (PDOException $e) {
-    print('Error : ' . $e->getMessage());
-    exit();
-}
