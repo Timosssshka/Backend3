@@ -2,9 +2,9 @@
  
 // Настройки подключения к базе данных
 $servername = "localhost";
-$username = "u52925";
-$password = "3596996";
-$dbname = "u52925";
+$username = "u52979";
+$password = "2087021";
+$dbname = "u52979";
  
 // Создание подключения
 try {
@@ -49,7 +49,6 @@ try {
     $stmt = $db->prepare("INSERT INTO users (name, email, birth_year, gender, limbs, bio, contract) VALUES (?, ?, ?, ?, ?, ?, ?)");
     $stmt->execute([$name, $email, $birth_year, $gender, $limbs, $bio, $contract]);
  
-    echo "Данные успешно сохранены.";*/
     $user_id = $db->lastInsertId();
  
     // Создание JSON-массива со списком способностей пользователя
