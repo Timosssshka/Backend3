@@ -51,9 +51,6 @@ try {
  
     $user_id = $db->lastInsertId();
  
-    // Создание JSON-массива со списком способностей пользователя
-    $abilities_json = json_encode($abilities, JSON_UNESCAPED_UNICODE);
- 
     // Сохранение списка способностей пользователя в таблице user_superpowers
     $stmt = $db->prepare("INSERT INTO user_superpowers (user_id, superpowers) VALUES (?, ?)");
     $stmt->execute([$user_id, $abilities_json]);
